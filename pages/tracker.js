@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Application Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+    <!--Chart.js library loaded from a CDN.
+    It allows for the creation of charts without installing anything.-->
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="jobs.html">Jobs</a>
+        <a href="tracker.html">Tracker</a>
+        <a href="profile.html">Profile</a>
+    </nav>
+
+    <div class = "page_title_text">
+        <h1>Your Applications</h1>
+        <h4>Total Applications: 0 (CHANGE)</h4>
+    </div>
+
+
+    <!-- This canvas is where Chart.js will draw the pie chart. Chart.js uses a <canvas> element to render graphics.-->
+    <div class = "pieChart">
+        <canvas id="statusChart"></canvas>
+    </div>
+    
+    <hr> <!--Renders a horizontal line to help split up content-->
+
+    <div class="search">
+        <h2>Search for a Specific Company or Job</h2>
+        <!--Text input for entering a task -->
+        <input type="text" id="search" placeholder="Keywords" style="width: 90%">
+
+        <!--Add a Button to add the task-->
+        <button id="searchBtn">Search</button>
+    </div>
+
+    <!-- JS will dynamically insert saved applications here -->
+    <div id="applications"></div>
+    <button onclick="gotoWebsite('Database Maintainer', 'DBLockdown')">
+        Go to Job Listing
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -33,18 +33,6 @@ function addApplication(title, company, description) {
     alert("Application added!");
 }
 
-/* GO TO JOB WEBSITE*/
-function gotoWebsite(title, company) {
-    // Attach link to button click that takes you to the job application on the company's website
-  // Get existing applications (or empty array if none exist)
-    let apps = JSON.parse(localStorage.getItem("websites")) || [];
-
-    // do stuff to access website link. getItem gets the value of the key
-    
-
-    alert(`Opening up ${title} at ${company} website!`);
-}
-
 
 /* LOAD APPLICATIONS*/
 function loadApplications() {
