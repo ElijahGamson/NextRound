@@ -1,4 +1,4 @@
-import {ProfileCard} from '../components/Cards'; // ./ (look in same folder), ../ (go up a folder)
+import Card from '../styles/cardStyles'; // ./ (look in same folder), ../ (go up a folder)
 import GlobalStyles from '../styles/GlobalStyles';
 import Nav from '../components/Nav';
 
@@ -7,7 +7,19 @@ export default function LoginPage(){
     <div>
         <GlobalStyles/>
         <Nav/>
-        <ProfileCard></ProfileCard>
+        <Card style={{width: '100%'}}>
+            <label>Name:</label>
+            <input type="text" id="name" placeholder="Name"/> 
+            {/* The /> just means I don't need a </input> at the end (it saves space and words)*/}
+
+            <label>Email:</label>
+            <input type="email" id="email" placeholder="Email"/>
+
+            <label>Password:</label>
+            <input type="password" id="password" placeholder="********"/>
+
+            <button>Save</button>
+        </Card>
     </div>
     );
 }

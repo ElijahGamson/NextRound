@@ -43,38 +43,5 @@ export function TrackerCard({title, company, link}){ //React components MUST sta
     );
 }
 
-export function IntroCard(){
-    return (
-        <Card style={{width: '100%'}}>
-            <h2>Why Use NextRound?</h2>
-            <ul>
-                <li>Find Jobs</li>
-                <li>Track applications</li>
-                <li>Organize your job search</li>
-                <li>Keep all the information in one place</li>
-                <li>Get to the NextRound of interviews</li>
-            </ul>
-        </Card>
-    );
-}
-
-export function ProfileCard(){
-    return (
-        <Card style={{width: '100%'}}>
-            <label>Name:</label>
-            <input type="text" id="name"/> 
-            {/* The /> just means I don't need a </input> at the end (it saves space and words)*/}
-
-            <label>Email:</label>
-            <input type="email" id="email"/>
-
-            <label>Password:</label>
-            <input type="password" id="password"/>
-
-            <button>Save</button>
-        </Card>
-    );
-}
-
 // export default jobCard; //Need to export so I can import it in other files
 // export default trackerCard;

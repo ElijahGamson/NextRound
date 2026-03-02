@@ -8,6 +8,9 @@ export default function TrackerPage(){
     <> {/* Empty container because functions require a parent container*/}
         <GlobalStyles/>
         <Nav/>
+        <label>Search for a specific job:</label>
+        <input type="text" placeholder="Keywords"/>
+        <hr style={{marginBottom: "10px"}}/>
         <CardLayout>
         <TrackerCard title="Frontend Developer" 
             company="Google"

@@ -15,48 +15,6 @@ body {
     color: #333;
 }
 
-/* NAVIGATION BAR*/
-/*nav {
-    background-color: #1e3a8a;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-}
-
-nav a {
-    color: white;
-    margin-right: 20px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-*/
-/*
-/* CARD COMPONENT*/
-/* Reusable UI container */
-/* Used for all the info*/
-.card {
-    text-align: center;
-    background: white;
-    padding: 15px;
-    /* margin-bottom: 15px; */
-    border-radius: 10px;
-    box-shadow: 0px 2px 6px rgba(0,0,0,0.1); /*4th number defines transparency*/
-    width: 32%;
-    /* margin-left: 7.5px;
-    margin-right: 7.5px; */
-
-}
-
-.cardLayout { /*The div container won't let you wrap items*/
-  display: flex; /*Allows multiple cards to fit next to eachother horizontally*/
-  gap: 15px;         /* space between cards */
-  flex-wrap: wrap; /* allows wrapping to next line */
-}
-*/
 
 #applications { /*Same as card layout, I just didn't want to mess anything with the javascript up*/
   display: flex; /*Allows multiple cards to fit next to eachother horizontally*/
@@ -80,16 +38,14 @@ button:hover {
 
 /* FORM ELEMENTS */
 input, select { /*Allows you to effect mutiple classes/ids/elements at with the same styling*/
+    text-align: left;
     padding: 8px;
     margin-top: 5px;
     margin-bottom: 10px;
     width: 100%;
-}
-
-/*Controls the header text on the home page (not the text in the card)*/
-.page_title_text {
-    text-align: center;
-    padding: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    color: black;
 }
 
 /*Job information within a card formatting*/
@@ -97,20 +53,18 @@ input, select { /*Allows you to effect mutiple classes/ids/elements at with the 
     padding: 5px;
 }
 
-/*Search bar and button formatting*/
-.search{
-    text-align: center;
-    padding: 5px;
-}
-
-/* Controls the size of the pie chart */
-.pieChart {
-    margin: 0 auto;   /* Centers horizontally */
-    margin-top: 0 auto;
-    text-align: center;
-    width: 50%;       /* Half the page */
-    max-width: 700px; /* Never bigger than 700px */
-    height: 500px;
+#background_image::before { /*Allows for the background image to be sepearte from the rest of the text and elements*/
+    content: ""; /*required for pseudo-element*/
+    position: fixed; /*background image stays in place while scrolling*/
+    top: 0; /*Where the image starts on y-axis*/
+    left: 0; /*Where the image starts on x-axis*/
+    width: 100%; /*Width of image is 100% of parent(screen size)*/
+    height: 100%; /*Height of image is 100% of parent(screen size)*/
+    background-image: url(https://media.istockphoto.com/id/1916729901/photo/meeting-success-two-business-persons-shaking-hands-standing-outside.jpg?s=612x612&w=0&k=20&c=Zpa1CaJlGI4mYdzqJGjCIEWFRCkqo3DmHxLopdki-SE=); /*Displays an image as the background of the website*/
+    background-repeat: no-repeat; /*The image won't repeat in the background*/
+    background-size: cover; /*Image covers entire screen while keeping image scaling intact*/
+    opacity: 0.75;
+    z-index: -1; /*puts image behind content*/
 }
 `;
 export default GlobalStyles;
