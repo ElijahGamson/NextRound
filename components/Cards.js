@@ -1,6 +1,6 @@
-export default function jobCard({title, company, description, link}){ //export default = Need to export so I can import it in other files
+export default function JobCard({title, company, description, link}){ //export default = Need to export so I can import it in other files
     return (
-    <div>
+    <> {/* Empty container because functions require a parent container*/}
         <div class="jobText">
             <h3><a href={link}>{title}</a></h3>
             <p>{company}</p>
@@ -9,13 +9,13 @@ export default function jobCard({title, company, description, link}){ //export d
         <button onclick="addApplication({title}, {company}, {description})">
             Add to Tracker
         </button>
-    </div>
+    </>
     );
 }
 
-export default function trackerCard({title, company, link}){
+export default function TrackerCard({title, company, link}){ //React components MUST start with a capital letter
     return (
-    <div>
+    <>
         <h3><a href={link}>{title}</a></h3>
         <p>Company: {company}</p>
         {/* Dropdown allows user to update application status.
@@ -33,11 +33,11 @@ export default function trackerCard({title, company, link}){
         <button onclick="removeApplication(${index})">
             Remove
         </button>
-    </div>
+    </>
     );
 }
 
-export default function introCard(){
+export default function IntroCard(){
     return (
         <div style="width: 100%">
             <h2>Why Use NextRound?</h2>
@@ -52,7 +52,7 @@ export default function introCard(){
     );
 }
 
-export default function userCard(){
+export default function ProfileCard(){
     return (
         <div style="width: 100%">
             <label>Name:</label>

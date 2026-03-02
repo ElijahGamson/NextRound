@@ -1,73 +1,30 @@
-<!DOCTYPE html>
-<html>
-<head>
+import JobCard from '../components/Cards'; // ./ (look in same folder), ../ (go up a folder)
+import GlobalStyles from '../styles/GlobalStyles';
 
-    <title>Available Jobs</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+export default function JobsHome(){
+    return (
+    <>
+        <GlobalStyles />
+        <Nav/>
+        <JobCard title="Frontend Developer" 
+            company="Google"
+            description="yada yada"
+            link="https://www.google.com/about/careers/applications/jobs/results"/>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="jobs.html">Jobs</a>
-        <a href="tracker.html">Tracker</a>
-        <a href="profile.html">Profile</a>
-    </nav>
+        <JobCard title="Backend Engineer" 
+            company="Amazon"
+            description="yada yada 2"
+            link="https://www.amazon.jobs/en/"/>
+        
+        <JobCard title="AI Designer" 
+            company="Microsoft"
+            description="yada yada"
+            link="https://careers.microsoft.com/v2/global/en/home.html"/>
 
-    <h1 class = "page_title_text">Available Jobs</h1>
-
-    <!--Placeholder job before API job finder is set up--> 
-    <div class="cardLayout">
-    <div class="card">
-        <div class="jobText">
-            <h3><a href="https://react.dev/reference/react/Component">Frontend Developer</a></h3>
-            <p>Company: TechCorp</p>
-            <small>Job Description: yada yada</small>
-        </div>
-        <button onclick="addApplication('Frontend Developer', 'TechCorp', 'yada yada')">
-            Add to Tracker
-        </button>
-    </div>
-
-    <div class="card">
-        <div class="jobText">
-            <h3>Backend Engineer</h3>
-            <p>Company: DataSystems</p>
-            <small>Job Description: yada yada 2</small>
-        </div>
-        <button onclick="addApplication('Backend Engineer', 'DataSystems', 'yada yada 2')">
-            Add to Tracker
-        </button>
-    </div>
-
-    <div class="card">
-        <div class="jobText">
-            <h3>AI Designer</h3>
-            <p>Company: AIAIAIAI</p>
-            <small>Job Description: yada yada 3</small>
-        </div>
-        <button onclick="addApplication('AI Designer', 'AIAIAIAI', 'yada yada 3')">
-            Add to Tracker
-        </button>
-    </div>
-
-    <div class="card">
-        <div class="jobText">
-            <h3>Database Maintainer</h3>
-            <p>Company: DBLockdown</p>
-            <small>Job Description: yada yada 4</small>
-        </div>
-        <button onclick="addApplication('Database Maintainer', 'DBLockdown', 'yada yada 4')">
-            Add to Tracker
-        </button>
-    </div>
-
-    </div>
-
-
-    <!-- JS will dynamically insert saved applications here -->
-    <div id="websites"></div>
-
-    <script src="script.js"></script>
-</body>
-</html>
+        <JobCard title="Database Maintainer" 
+            company="Oracle"
+            description="yada yada 2"
+            link="https://www.oracle.com/careers/"/>
+    </> 
+    );
+}

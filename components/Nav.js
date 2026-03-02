@@ -1,10 +1,10 @@
-export default function(){
+export default function Nav(){
     return (
     <nav>
-        <a href="index.html">Home</a>
-        <a href="jobs.html">Jobs</a>
-        <a href="tracker.html">Tracker</a>
-        <a href="profile.html">Profile</a>
+        <a href="home.js">Home</a>
+        <a href="jobs.js">Jobs</a>
+        <a href="tracker.js">Tracker</a>
+        <a href="profile.js">Profile</a>
     </nav>
     );
 }

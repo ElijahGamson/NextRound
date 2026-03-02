@@ -1,12 +1,12 @@
-import ProfileCard from '../components/Cards'; // ./ (look in same folder), ../ (go up a folder)
+import IntroCard from '../components/Cards'; // ./ (look in same folder), ../ (go up a folder)
 import GlobalStyles from '../styles/GlobalStyles';
 
 export default function HomePage(){
     return (
     <div>
         <GlobalStyles/>
-        <Nav/>
-        <ProfileCard></ProfileCard>
+        <Nav></Nav>
+        <IntroCard></IntroCard>
     </div>
     );
 }
