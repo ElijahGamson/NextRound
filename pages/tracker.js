@@ -3,7 +3,7 @@ import GlobalStyles from '../styles/GlobalStyles';
 
 export default function TrackerHome(){
     return(
-    <>
+    <> {/* Empty container because functions require a parent container*/}
         <GlobalStyles/>
         <Nav/>
         <TackerCard title="Frontend Developer" 

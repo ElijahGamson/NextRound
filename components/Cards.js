@@ -1,6 +1,8 @@
+import Card from '../styles/cardStyles';
+
 export default function JobCard({title, company, description, link}){ //export default = Need to export so I can import it in other files
     return (
-    <> {/* Empty container because functions require a parent container*/}
+    <Card>
         <div class="jobText">
             <h3><a href={link}>{title}</a></h3>
             <p>{company}</p>
@@ -9,13 +11,13 @@ export default function JobCard({title, company, description, link}){ //export d
         <button onclick="addApplication({title}, {company}, {description})">
             Add to Tracker
         </button>
-    </>
+    </Card>
     );
 }
 
 export default function TrackerCard({title, company, link}){ //React components MUST start with a capital letter
     return (
-    <>
+    <Card>
         <h3><a href={link}>{title}</a></h3>
         <p>Company: {company}</p>
         {/* Dropdown allows user to update application status.
@@ -33,13 +35,13 @@ export default function TrackerCard({title, company, link}){ //React components 
         <button onclick="removeApplication(${index})">
             Remove
         </button>
-    </>
+    </Card>
     );
 }
 
 export default function IntroCard(){
     return (
-        <div style="width: 100%">
+        <Card style="width: 100%">
             <h2>Why Use NextRound?</h2>
             <ul>
                 <li>Find Jobs</li>
@@ -48,13 +50,13 @@ export default function IntroCard(){
                 <li>Keep all the information in one place</li>
                 <li>Get to the NextRound of interviews</li>
             </ul>
-        </div>
+        </Card>
     );
 }
 
 export default function ProfileCard(){
     return (
-        <div style="width: 100%">
+        <Card style="width: 100%">
             <label>Name:</label>
             <input type="text" id="name"/> 
             {/* The /> just means I don't need a </input> at the end (it saves space and words)*/}
@@ -66,7 +68,7 @@ export default function ProfileCard(){
             <input type="password" id="password"/>
 
             <button onclick="saveProfile()">Save</button>
-        </div>
+        </Card>
     );
 }
 

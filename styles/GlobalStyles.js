@@ -16,7 +16,7 @@ body {
 }
 
 /* NAVIGATION BAR*/
-nav {
+/*nav {
     background-color: #1e3a8a;
     padding: 15px;
     margin-bottom: 20px;
@@ -33,6 +33,7 @@ nav a {
 nav a:hover {
     text-decoration: underline;
 }
+*/
 /*
 /* CARD COMPONENT*/
 /* Reusable UI container */
