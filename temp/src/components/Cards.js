@@ -1,10 +1,11 @@
+import GlobalStyles from '@/styles/GlobalStyles';
 import Card from '../styles/cardStyles';
 
 //<button onClick={() => addApplication({title}, {company}, {description}, {link})}>Save</button>
 export function JobCard({title, company, description, link}){ //export default = Need to export so I can import it in other files
     return (
     <Card>
-        <div className="jobText">
+        <div id="jobText">
             <h3><a href={link}>{title}</a></h3>
             <p>{company}</p>
             <small>{description}</small>
@@ -19,8 +20,9 @@ export function JobCard({title, company, description, link}){ //export default =
 export function TrackerCard({title, company, link}){ //React components MUST start with a capital letter
     return (
     <Card>
+        <div id="jobText">
         <h3><a href={link}>{title}</a></h3>
-        <p>Company: {company}</p>
+        <p>{company}</p>
         {/* Dropdown allows user to update application status.
         onchange triggers updateStatus(). */}
         {/* <select onchange="updateStatus(${index}, this.value)">
@@ -32,6 +34,7 @@ export function TrackerCard({title, company, link}){ //React components MUST sta
             <option ${app.status === "Rejected" ? "selected" : ""}>Rejected</option>
             <option ${app.status === "Accepted" ? "selected" : ""}>Accepted</option>
         </select> */}
+        </div>
 
         <button>
             Remove

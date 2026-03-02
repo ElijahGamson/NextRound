@@ -93,7 +93,7 @@ input, select { /*Allows you to effect mutiple classes/ids/elements at with the 
 }
 
 /*Job information within a card formatting*/
-.jobText{
+#jobText{
     padding: 5px;
 }
 

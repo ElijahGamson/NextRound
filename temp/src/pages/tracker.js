@@ -1,4 +1,5 @@
 import {TrackerCard} from '../components/Cards'; // ./ (look in same folder), ../ (go up a folder)
+import {CardLayout} from '../styles/cardStyles';
 import GlobalStyles from '../styles/GlobalStyles';
 import Nav from '../components/Nav';
 
@@ -7,6 +8,7 @@ export default function TrackerPage(){
     <> {/* Empty container because functions require a parent container*/}
         <GlobalStyles/>
         <Nav/>
+        <CardLayout>
         <TrackerCard title="Frontend Developer" 
             company="Google"
             link="https://www.google.com/about/careers/applications/jobs/results"/>
@@ -22,6 +24,7 @@ export default function TrackerPage(){
         <TrackerCard title="Database Maintainer" 
             company="Oracle"
             link="https://www.oracle.com/careers/"/>
+        </CardLayout>
     </>
 
     );

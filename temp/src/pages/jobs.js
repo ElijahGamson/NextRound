@@ -1,4 +1,5 @@
 import {JobCard} from '../components/Cards'; // ./ (look in same folder), ../ (go up a folder)
+import {CardLayout} from '../styles/cardStyles';
 import GlobalStyles from '../styles/GlobalStyles';
 import Nav from '../components/Nav';
 
@@ -7,6 +8,7 @@ export default function JobsPage(){
     <>
         <GlobalStyles />
         <Nav/>
+        <CardLayout>
         <JobCard title="Frontend Developer" 
             company="Google"
             description="yada yada"
@@ -26,6 +28,7 @@ export default function JobsPage(){
             company="Oracle"
             description="yada yada 2"
             link="https://www.oracle.com/careers/"/>
+        </CardLayout>
     </> 
     );
 }

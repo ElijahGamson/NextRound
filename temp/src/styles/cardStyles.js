@@ -13,4 +13,10 @@ const Card = styled.div`
     margin-right: 7.5px; */
 `;
 
+export const CardLayout = styled.div`
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+`;
+
 export default Card;
