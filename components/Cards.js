@@ -1,21 +1,22 @@
 import Card from '../styles/cardStyles';
 
-export default function JobCard({title, company, description, link}){ //export default = Need to export so I can import it in other files
+//<button onClick={() => addApplication({title}, {company}, {description}, {link})}>Save</button>
+export function JobCard({title, company, description, link}){ //export default = Need to export so I can import it in other files
     return (
     <Card>
-        <div class="jobText">
+        <div className="jobText">
             <h3><a href={link}>{title}</a></h3>
             <p>{company}</p>
             <small>{description}</small>
         </div>
-        <button onclick="addApplication({title}, {company}, {description})">
+        <button>
             Add to Tracker
         </button>
     </Card>
     );
 }
 
-export default function TrackerCard({title, company, link}){ //React components MUST start with a capital letter
+export function TrackerCard({title, company, link}){ //React components MUST start with a capital letter
     return (
     <Card>
         <h3><a href={link}>{title}</a></h3>
@@ -32,16 +33,16 @@ export default function TrackerCard({title, company, link}){ //React components 
             <option ${app.status === "Accepted" ? "selected" : ""}>Accepted</option>
         </select> */}
 
-        <button onclick="removeApplication(${index})">
+        <button>
             Remove
         </button>
     </Card>
     );
 }
 
-export default function IntroCard(){
+export function IntroCard(){
     return (
-        <Card style="width: 100%">
+        <Card style={{width: '100%'}}>
             <h2>Why Use NextRound?</h2>
             <ul>
                 <li>Find Jobs</li>
@@ -54,9 +55,9 @@ export default function IntroCard(){
     );
 }
 
-export default function ProfileCard(){
+export function ProfileCard(){
     return (
-        <Card style="width: 100%">
+        <Card style={{width: '100%'}}>
             <label>Name:</label>
             <input type="text" id="name"/> 
             {/* The /> just means I don't need a </input> at the end (it saves space and words)*/}
@@ -67,7 +68,7 @@ export default function ProfileCard(){
             <label>Password:</label>
             <input type="password" id="password"/>
 
-            <button onclick="saveProfile()">Save</button>
+            <button>Save</button>
         </Card>
     );
 }

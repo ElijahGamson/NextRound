@@ -20,3 +20,5 @@ nav a:hover {
     text-decoration: underline;
 }
 `;
+
+export default NavStyle;

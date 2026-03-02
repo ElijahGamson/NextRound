@@ -1,12 +1,13 @@
-import TrackerCard from '../components/Cards'; // ./ (look in same folder), ../ (go up a folder)
+import {TrackerCard} from '../components/Cards'; // ./ (look in same folder), ../ (go up a folder)
 import GlobalStyles from '../styles/GlobalStyles';
+import Nav from '../components/Nav';
 
-export default function TrackerHome(){
+export default function TrackerPage(){
     return(
     <> {/* Empty container because functions require a parent container*/}
         <GlobalStyles/>
         <Nav/>
-        <TackerCard title="Frontend Developer" 
+        <TrackerCard title="Frontend Developer" 
             company="Google"
             link="https://www.google.com/about/careers/applications/jobs/results"/>
 

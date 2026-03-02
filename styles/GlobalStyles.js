@@ -112,4 +112,5 @@ input, select { /*Allows you to effect mutiple classes/ids/elements at with the 
     max-width: 700px; /* Never bigger than 700px */
     height: 500px;
 }
-`
+`;
+export default GlobalStyles;
