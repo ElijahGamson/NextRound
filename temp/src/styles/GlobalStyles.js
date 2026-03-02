@@ -48,10 +48,23 @@ input, select { /*Allows you to effect mutiple classes/ids/elements at with the 
     color: black;
 }
 
+/*style for any expandable text*/
+details{
+    cursor: pointer;
+}
+
 /*Job information within a card formatting*/
 #jobText{
     padding: 5px;
 }
+
+/*Centered text for anything important on the screen*/
+#titleText{
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
 
 #background_image::before { /*Allows for the background image to be sepearte from the rest of the text and elements*/
     content: ""; /*required for pseudo-element*/

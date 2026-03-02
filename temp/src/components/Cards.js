@@ -6,9 +6,10 @@ export function JobCard({title, company, description, link}){ //export default =
     return (
     <Card>
         <div id="jobText">
-            <h3><a href={link}>{title}</a></h3>
+            {/*target = _blank opens the link in a new tab, rel = noopener noreferrer was a recommended security measure*/}
+            <h3><a href={link} target="_blank" rel="noopener noreferrer">{title}</a></h3>
             <p>{company}</p>
-            <small>{description}</small>
+            <small><details><summary>Job Description:</summary>{description}</details></small>
         </div>
         <button>
             Add to Tracker
@@ -21,7 +22,7 @@ export function TrackerCard({title, company, link}){ //React components MUST sta
     return (
     <Card>
         <div id="jobText">
-        <h3><a href={link}>{title}</a></h3>
+        <h3><a href={link} target="_blank" rel="noopener noreferrer">{title}</a></h3>
         <p>{company}</p>
         {/* Dropdown allows user to update application status.
         onchange triggers updateStatus(). */}
