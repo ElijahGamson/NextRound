@@ -11,9 +11,9 @@ export function JobCard({title, company, description, link, domain}){ //export d
             <p>{company}</p>
             <small><details><summary>Job Description:</summary>{description}</details></small>
         </div>
-        <button>
-            Add to Tracker
-        </button>
+        
+        {/* Calls the addToTracker function in jobs.js when clicked */}
+        <button onClick={onAdd}>Add to Tracker</button>
     </Card>
     );
 }

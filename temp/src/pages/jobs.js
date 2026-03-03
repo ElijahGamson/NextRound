@@ -1,10 +1,12 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {JobCard} from '../components/Cards'; // ./ (look in same folder), ../ (go up a folder)
 import {CardLayout} from '../styles/cardStyles';
 import GlobalStyles from '../styles/GlobalStyles';
 import Nav from '../components/Nav';
+import { auth, database } from '../library/firebaseConfig';
+import { collection, addDoc, getDocs } from 'firebase/firestore';
 
-export default function JobsPage(){
+export default function JobsPage() {
     // Stores the list of jobs returned from the API
     const [jobs, setJobs] = useState([]);
 
@@ -14,29 +16,82 @@ export default function JobsPage(){
     // Stores whatever the user types in the search box
     const [search, setSearch] = useState('');
 
+    // tracks which jobs are already saved
+    const [savedJobIds, setSavedJobIds] = useState([]);
+
+    useEffect(() => {
+        // When page loads, fetch the user's already saved job IDs from Firebase
+        const fetchSavedJobs = async () => {
+            const user = auth.currentUser;
+            if (!user) return;
+
+            // Get all saved jobs from Firebase for this user
+            const snapshot = await getDocs(collection(database, 'users', user.uid, 'applications'));
+            
+            // Store just the job IDs so we can filter them out
+            const ids = snapshot.docs.map(doc => doc.data().job_id);
+            setSavedJobIds(ids);
+        };
+
+        fetchSavedJobs();
+    }, []);
+
     const fetchJobs = async () => {
         // Show loading message while waiting
         setLoading(true);
 
         // Call our API route which calls JSearch
         const response = await fetch(`/api/jobsapi?query=${search}`);
-
+        
         // Convert response to JSON
         const data = await response.json();
 
-        console.log(data[4]); // logs the first job so you can see all its fields
+        // Filter out jobs the user has already saved
+        const filteredJobs = data.filter(job => !savedJobIds.includes(job.job_id));
 
         // Store jobs in state so they render on the page
-        setJobs(data);
+        setJobs(filteredJobs);
 
         // Hide loading message
         setLoading(false);
     };
-    
+
+    const addToTracker = async (job) => {
+        const user = auth.currentUser;
+
+        // Make sure user is logged in before saving
+        if (!user) {
+            alert('Please sign in to save jobs!');
+            return;
+        }
+
+        try {
+            // Save the job to Firebase under the user's account
+            await addDoc(collection(database, 'users', user.uid, 'applications'), {
+                job_id: job.job_id,
+                title: job.job_title,
+                company: job.employer_name,
+                link: job.job_apply_link,
+                status: 'Applied',
+                dateAdded: new Date().toISOString()
+            });
+
+            // Remove the job from the current list so it disappears immediately
+            setJobs(prev => prev.filter(j => j.job_id !== job.job_id));
+
+            // Add the job ID to saved list
+            setSavedJobIds(prev => [...prev, job.job_id]);
+
+            alert('Job added to tracker!');
+        } catch (error) {
+            console.error('Error adding job:', error);
+        }
+    };
+
     return (
         <div>
-            <GlobalStyles/>
-            <Nav/>
+            <GlobalStyles />
+            <Nav />
 
             {/* Search bar */}
             <div className="search">
@@ -63,6 +118,7 @@ export default function JobsPage(){
                         company={job.employer_name}
                         description={job.job_description?.substring(0, 300) + '...' || 'No description available'}
                         link={job.job_apply_link}
+                        onAdd={() => addToTracker(job)}
                     />
                 ))}
                 {/*Example card for testing so I don't use all my query searches*/}
