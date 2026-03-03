@@ -13,10 +13,16 @@ const Card = styled.div`
     margin-right: 7.5px; */
 `;
 
+// A new component based on Card, but with some override styles
+export const LargeCard = styled(Card)`
+    width: 100%;
+`;
+
 export const CardLayout = styled.div`
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
 `;
+
 
 export default Card;

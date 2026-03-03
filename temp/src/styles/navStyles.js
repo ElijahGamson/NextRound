@@ -11,7 +11,7 @@ nav {
 
 nav a { /*Targets any <a> element in a <nav> element*/
     color: white;
-    margin-right: 5%;
+    margin-right: 10%;
     text-decoration: none;
     font-weight: bold;
 }
