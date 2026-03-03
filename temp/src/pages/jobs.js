@@ -94,15 +94,15 @@ export default function JobsPage() {
             <Nav />
 
             {/* Search bar */}
-            <div className="search">
-                <input
-                    type="text"
-                    placeholder="Search jobs..."
+            <div className="search" style={{paddingBottom: '10px'}}>
+                <input type="text" placeholder="Search jobs..."
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                 />
                 <button onClick={fetchJobs}>Search</button>
             </div>
+
+            <hr/>
 
             <h3 id="titleText">Click on the job title to apply</h3>
 
